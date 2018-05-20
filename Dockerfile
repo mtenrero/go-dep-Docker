@@ -4,7 +4,11 @@ RUN apk update \
   && apk add ca-certificates wget unzip git \
   && update-ca-certificates \
   && apk add curl \
-  && apk add gcc
+  && apk add gcc \
+  && apk add musl-dev \
+  && apk add bash
+
+RUN mkdir -p .cache
 
 # Install golang/dep
 WORKDIR /root
