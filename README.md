@@ -2,11 +2,11 @@
 
 This image is intended for building - testing Golang apps which uses vendoring packages handled by Dep dependency manager.
 
-## Paths
+## Paths
 
 By default, **GOPATH** is located under /go directory
 
-## How shoud I use the image
+## How shoud I use the image
 
 Once you have your source code available under your current directory, you should specify a volume mapping to the docker image to the `/go/src/app` directory.
 
@@ -18,7 +18,7 @@ Then your code will be available in the previous path, which is inside the $GOPA
 docker run -ti -v $(pwd):/go/src/app tenrero/golang-dep-alpine
 ```
 
-### Jenkins Declarative Pipeline
+### Jenkins Declarative Pipeline
 
 ```Jenkinsfile
 pipeline {
