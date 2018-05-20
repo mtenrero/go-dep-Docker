@@ -3,7 +3,8 @@ FROM golang:alpine
 RUN apk update \
   && apk add ca-certificates wget unzip git \
   && update-ca-certificates \
-  && apk add curl
+  && apk add curl \
+  && apk add gcc
 
 # Install golang/dep
 WORKDIR /root
