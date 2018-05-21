@@ -1,12 +1,9 @@
-FROM golang:alpine
+FROM golang:latest
 
-RUN apk update \
-  && apk add ca-certificates wget unzip git \
-  && update-ca-certificates \
-  && apk add curl \
-  && apk add gcc \
-  && apk add musl-dev \
-  && apk add bash
+RUN apt update -y \
+  && apt install musl-dev -y
+  
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 RUN mkdir -p .cache
 
