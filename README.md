@@ -1,4 +1,4 @@
-# Golang & Dep (Alpine based Docker Image)
+# Golang & Dep (Ubuntu based Docker Image)
 
 This image is intended for building - testing Golang apps which uses vendoring packages handled by Dep dependency manager.
 
@@ -41,3 +41,9 @@ pipeline {
 Just mount the Docker Socket
 
 `-v /var/run/docker.sock:/var/run.docker.sock`
+
+### Fix permissions for Docker In Docker with Jenkins
+
+```bash
+sudo usermod -aG docker jenkins
+```
